@@ -1,6 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Urzua</title>
+
+  <style>
+    :root {
+      --pink: #ff6f91;
+      --orange: #ff9671;
+      --yellow: #ffc75f;
+      --teal: #4dd0c8;
+      --purple: #845ec2;
+      --bg: #fff9f3;
+      --text: #2d2d2d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(
+        90deg,
+        var(--pink),
+        var(--orange),
+        var(--yellow)
+      );
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: white;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      width: 30px;
+      height: 22px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: white;
+      left: 0;
+      transition: 0.4s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+      top: 9px;
+    }
+
+    .hamburger span:nth-child(3) {
+      bottom: 0;
+    }
+
+    /* Animate to X */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      width: 240px;
+      height: calc(100vh - 70px);
+      background: linear-gradient(
+        180deg,
+        var(--purple),
+        var(--teal)
+      );
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: right 0.4s ease;
+      border-top-left-radius: 30px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .nav.active {
+      right: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 120px 24px;
+      max-width: 900px;
+      margin: auto;
+      scroll-margin-top: 90px;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(
+        120deg,
+        rgba(255,150,113,0.15),
+        rgba(77,208,200,0.15)
+      );
+      border-radius: 40px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: var(--purple);
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
 <body>
 
-  <nav>
+<header class="header">
+  <div class="logo">Your Name</div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav" id="nav">
     <a href="#bio">Bio</a>
     <a href="#teaching">Teaching</a>
     <a href="#gallery">Gallery</a>
@@ -8,35 +180,54 @@
     <a href="#live-sound">Live Sound</a>
     <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <section id="bio">
-    <h2>Bio</h2>
-    <p>Your bio text here…</p>
-  </section>
+<section id="bio">
+  <h2>Bio</h2>
+  <p>Your bio text here.</p>
+</section>
 
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <p>Teaching info here…</p>
-  </section>
+<section id="teaching">
+  <h2>Teaching</h2>
+  <p>Teaching info here.</p>
+</section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <!-- images -->
-  </section>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p>Images coming soon.</p>
+</section>
 
-  <section id="bands">
-    <h2>Bands</h2>
-    <p>Bands/projects info…</p>
-  </section>
+<section id="bands">
+  <h2>Bands</h2>
+  <p>Bands / projects info here.</p>
+</section>
 
-  <section id="live-sound">
-    <h2>Live Sound & Audio Engineering</h2>
-    <p>Details here…</p>
-  </section>
+<section id="live-sound">
+  <h2>Live Sound & Audio Engineering</h2>
+  <p>Details here.</p>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email / socials here…</p>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email / socials here.</p>
+</section>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
+</script>
 
 </body>
+</html>
