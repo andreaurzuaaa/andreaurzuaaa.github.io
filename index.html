@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrea Urzúa</title>
+  <title>ANDREA URZUA</title>
 
   <style>
     * {
@@ -21,13 +21,14 @@
 
     /* ===== HERO ===== */
     .hero {
-      height: 100vh;
+      min-height: 100svh;
+      margin-top: -70px;
       background-image:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url("images/hero.jpg");
-      background-size: cover;          /* fills the hero section fully */
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
-      background-position: center center; /* keeps the important parts centered */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +36,8 @@
       padding: 0 2rem;
       position: relative;
       overflow: hidden;
-    }
+}
+
 
     .hero-text {
       color: #ffffff;
