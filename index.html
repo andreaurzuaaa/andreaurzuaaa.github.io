@@ -3,174 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrea Urzúa</title>
+  <title>Your Name</title>
 
   <style>
-    :root {
-      --pink: #ff6f91;
-      --orange: #ff9671;
-      --yellow: #ffc75f;
-      --teal: #4dd0c8;
-      --purple: #845ec2;
-      --bg: #fffdfa;
-      --text: #2a2a2a;
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: "Inter", sans-serif;
+      box-sizing: border-box;
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
+      color: white;
     }
 
-    /* ===== HEADER + NAV ===== */
-    .header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      z-index: 100;
-      border-bottom: 1px solid #eee;
-    }
-
-    .logo {
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    .hamburger {
-      width: 30px;
-      height: 22px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      background: var(--text);
-      left: 0;
-      transition: 0.4s ease;
-      border-radius: 2px;
-    }
-
-    .hamburger span:nth-child(1) { top: 0; }
-    .hamburger span:nth-child(2) { top: 9px; }
-    .hamburger span:nth-child(3) { bottom: 0; }
-
-    .hamburger.active span:nth-child(1) {
-      top: 9px;
-      transform: rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) {
-      bottom: 9px;
-      transform: rotate(-45deg);
-    }
-
-    .nav {
-      position: fixed;
-      top: 70px;
-      right: -110%;
-      width: 230px;
-      background: white;
-      box-shadow: -2px 8px 20px rgba(0,0,0,0.05);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      transition: right 0.35s ease;
-    }
-
-    .nav.active { right: 0; }
-    .nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    /* ===== HERO ===== */
-   .hero {
-       height: 100vh;
-       background-image:
-         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-         url("https://picsum.photos/2000/1200");
-       background-size: cover;
-       background-position: center;
-    }
-
-    .hero h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      color: var(--purple);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-      padding: 100px 24px;
-      max-width: 920px;
-      margin: auto;
-      scroll-margin-top: 90px;
-    }
-
-    section h2 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--purple);
-      margin-bottom: 16px;
-    }
-    
-    section:nth-child(even) {
-      background: rgba(255,209,220,0.2);
-      border-radius: 24px;
-    }
-
-    p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--text);
-    }
- 
     .hero {
       height: 100vh;
       background-image:
-      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-      url("images/hero.jpg");
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://picsum.photos/2000/1200");
       background-size: cover;
       background-position: center;
       display: flex;
       align-items: center;
-      padding: 0 40px;
-  
-  
-  
-  
-  
-  
+      padding: 4rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+    }
   </style>
 </head>
+
 
 <body>
 
@@ -195,7 +61,6 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
   <h1>ANDREA URZÚA</h1>
-  <p>Musician • Teacher • Live Sound Engineer</p>
 </section>
 
 <!-- ===== MAIN CONTENT ===== -->
