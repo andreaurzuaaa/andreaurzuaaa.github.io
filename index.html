@@ -18,23 +18,38 @@
       color: white;
     }
 
-    .hero {
+   .hero {
   height: 100vh;
   background-image:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("images/hero.jpg"); /* <- your photo here */
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/hero.jpg"); /* your hero image */
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
-  padding: 4rem;
-   
-    }
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  text-align: center;        /* centers text inside div */
+  padding: 0 2rem;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-    }
+.hero-text {
+  color: #ffffff;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;       /* big but not overwhelming */
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  opacity: 0.85;        /* subtle but readable */
+  letter-spacing: 0.04em;
+}
+
   </style>
 </head>
 
@@ -61,7 +76,10 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <h1>ANDREA URZÚA</h1>
+  <div class="hero-text">
+    <h1>ANDREA URZÚA</h1>
+    <p>Musician • Teacher • Audio Engineer</p>
+  </div>
 </section>
 
 <!-- ===== MAIN CONTENT ===== -->
