@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name</title>
+  <title>Andrea Urzúa</title>
 
   <style>
     * {
@@ -18,202 +18,161 @@
       color: white;
     }
 
-.hero {
-  height: 100vh;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("images/hero.jpg"); /* your hero image */
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 2rem;
-  overflow: hidden;
-  position: relative;
-}
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero-text {
-  color: #ffffff;
-  max-width: 600px;
-  opacity: 0;
-  transform: translateY(30px);
-.hero {
-  height: 100vh;
-  background-image:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("images/hero.jpg");
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 2rem;
-  position: relative; /* important so text appears on top */
-}
+    .hero-text {
+      color: #ffffff;
+      max-width: 600px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s ease-out;
+      z-index: 2;
+    }
 
-.hero-text {
-  color: #ffffff;
-  max-width: 600px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1.2s ease-out;
-  z-index: 2; /* ensures it’s above background */
-}
+    .hero-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.hero-text.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
 
-.hero-text h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
+    .hero-text p {
+      font-size: 1.3rem;
+      opacity: 0.85;
+      letter-spacing: 0.04em;
+    }
 
-.hero-text p {
-  font-size: 1.3rem;
-  opacity: 0.85;
-  letter-spacing: 0.04em;
-}
+    /* ===== HEADER / NAV ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.6);
+      z-index: 10;
+    }
 
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
 
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
 
+    .nav {
+      display: none;
+    }
+
+    .nav.active {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 60px;
+      right: 2rem;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 
-
 <body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo">Andrea Urzúa</div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
 
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <div class="logo">Andrea Urzúa</div>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
+    <nav class="nav" id="nav">
+      <a href="#bio">Bio</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#bands">Bands</a>
+      <a href="#live-sound">Live Sound</a>
+      <a href="#photography">Photography</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <nav class="nav" id="nav">
-    <a href="#bio">Bio</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#bands">Bands</a>
-    <a href="#live-sound">Live Sound</a>
-    <a href="#photography">Photography</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Andrea Urzúa</h1>
+      <p>Musician • Teacher • Audio Engineer</p>
+    </div>
+  </section>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Your Name</h1>
-    <p>Musician • Teacher • Audio Engineer</p>
-  </div>
-</section>
-<script>
+  <!-- ===== MAIN CONTENT ===== -->
+  <section id="bio"><h2>Bio</h2><p>…</p></section>
+  <section id="teaching"><h2>Teaching</h2><p>…</p></section>
+  <section id="gallery"><h2>Gallery</h2><p>…</p></section>
+  <section id="bands"><h2>Bands</h2><p>…</p></section>
+  <section id="live-sound"><h2>Live Sound & Audio Engineering</h2><p>…</p></section>
+  <section id="photography"><h2>Photography</h2><p>…</p></section>
+  <section id="contact"><h2>Book a session or a lesson!</h2><p>Email …</p></section>
 
-  // Fade-in hero text
-  window.addEventListener('load', () => {
-    const heroText = document.querySelector('.hero-text');
-    heroText.classList.add('visible');
-  });
-
-  // Hamburger menu
-  const hamburger = document.getElementById("hamburger");
-  const nav = document.getElementById("nav");
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-  document.querySelectorAll(".nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      nav.classList.remove("active");
+  <!-- ===== JS ===== -->
+  <script>
+    // Fade-in hero text
+    window.addEventListener('load', () => {
+      const heroText = document.querySelector('.hero-text');
+      setTimeout(() => {
+        heroText.classList.add('visible');
+      }, 300);
     });
-</script>
 
-<!-- ===== MAIN CONTENT ===== -->
-<section id="bio">
-  <h2>Bio</h2>
-  <p>I am a Bay Area–based musician with over 10 years of experience performing and creating music. I have played at venues and events throughout the Bay Area, developing a strong presence as both a performer and collaborator across a wide range of musical settings.
-I am a graduate of Cabrillo College, where I earned an Associate’s Degree in Music as well as an Associate’s Degree in Science in Music Technology and Recording Arts. My background combines formal musical training with lots of hands-on experience in recording, production, and live performance.
-In addition to performing and production, I offer music instruction and have been teaching since 2019. I am passionate about helping students grow their musical skills, confidence, and creativity through personalized, supportive instruction.
-  </p>
-</section>
+    // Hamburger menu
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
 
-<section id="teaching">
-  <h2>Teaching</h2>
-  <p>One of the biggest beliefs I have reagrding teaching is that in order for the student to succeed, the teacher must adapt to the student. That's the beauty of one on one lessons; you learn where the student thrives and where their faults are. As a team you work through how to make those faults their strong suits.
-    When it comes to my system of teaching, I really love a good balance of warmups, theory, and making it fun so that it engages the student. Of course, depending on the student it may need some altering, but engagement for anyone learning anything is key..</p>
-</section>
-
-<section id="gallery">
-  <h2>Gallery</h2>
-  <p>Photos, artwork, or media that express your craft.</p>
-</section>
-
-<section id="bands">
-  <h2>Bands</h2>
-  <p>Projects, collaborations, creative history.</p>
-</section>
-
-<section id="live-sound">
-  <h2>Live Sound & Audio Engineering</h2>
-  <p>Details about your technical work, services, experiences.</p>
-</section>
-
-  <section id="photography">
-  <h2>Photography</h2>
-  <p>Details about your technical work, services, experiences.</p>
-</section>
-
-<section id="contact">
-  <h2>Book a session or a lesson!</h2>
-  <p>Email: andreaurzuaaa@gmail.com | Instagram: @andreaurzuaaa | Linkedin: www.linkedin.com/in/andreaurzua820505206</p>
-</section>
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const nav = document.getElementById("nav");
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-
-  document.querySelectorAll(".nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      nav.classList.remove("active");
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      nav.classList.toggle("active");
     });
-  });
-</script>
-<script>
-  // Hamburger menu
-  const hamburger = document.getElementById("hamburger");
-  const nav = document.getElementById("nav");
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
-  });
-  document.querySelectorAll(".nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      nav.classList.remove("active");
-    });
-  });
 
-  // Fade-in hero text on page load
-  window.addEventListener('load', () => {
-    const heroText = document.querySelector('.hero-text');
-    setTimeout(() => {
-      heroText.classList.add('visible');
-    }, 300); // slight delay
-  });
-</script>
+    document.querySelectorAll(".nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        nav.classList.remove("active");
+      });
+    });
+  </script>
 </body>
 </html>
