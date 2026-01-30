@@ -156,6 +156,28 @@ In addition to performing and production, I offer music instruction and have bee
     });
   });
 </script>
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
 
+  // Fade-in hero text on page load
+  window.addEventListener('load', () => {
+    const heroText = document.querySelector('.hero-text');
+    setTimeout(() => {
+      heroText.classList.add('visible');
+    }, 300); // slight delay
+  });
+</script>
 </body>
 </html>
