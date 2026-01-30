@@ -39,7 +39,28 @@
   max-width: 600px;
   opacity: 0;
   transform: translateY(30px);
+.hero {
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative; /* important so text appears on top */
+}
+
+.hero-text {
+  color: #ffffff;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
   transition: all 1.2s ease-out;
+  z-index: 2; /* ensures it’s above background */
 }
 
 .hero-text.visible {
@@ -47,7 +68,6 @@
   transform: translateY(0);
 }
 
-/* Headline */
 .hero-text h1 {
   font-size: 4rem;
   font-weight: 800;
@@ -55,17 +75,12 @@
   margin-bottom: 1rem;
 }
 
-/* Subtitle */
 .hero-text p {
   font-size: 1.3rem;
   opacity: 0.85;
   letter-spacing: 0.04em;
 }
 
-/* Parallax effect on scroll */
-.hero {
-  background-attachment: fixed;
-}
 
 
   </style>
@@ -95,10 +110,31 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-text">
-    <h1>ANDREA URZÚA</h1>
+    <h1>Your Name</h1>
     <p>Musician • Teacher • Audio Engineer</p>
   </div>
 </section>
+<script>
+
+  // Fade-in hero text
+  window.addEventListener('load', () => {
+    const heroText = document.querySelector('.hero-text');
+    heroText.classList.add('visible');
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+</script>
 
 <!-- ===== MAIN CONTENT ===== -->
 <section id="bio">
